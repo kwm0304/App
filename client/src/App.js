@@ -7,6 +7,9 @@ import {
   createHttpLink
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Calendar } from './components/Calendar';
 
 const httpLink = createHttpLink({
   uri: '/graohql'
@@ -33,9 +36,12 @@ function App() {
       <Router>
         {/* Nav*/}
         <Routes>
-          <Route>
-            
-          </Route>
+          <Route 
+          path="/"
+          element={<Calendar />}
+          />
+
+          
         </Routes>
       </Router>
 

@@ -4,6 +4,12 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.7.9",
+    "@fullcalendar/core": "^6.1.4",
+    "@fullcalendar/daygrid": "^6.1.4",
+    "@fullcalendar/interaction": "^6.1.4",
+    "@fullcalendar/react": "^6.1.4",
+    "@fullcalendar/scrollgrid": "^6.1.4",
+    "@fullcalendar/timegrid": "^6.1.4",
     "@stripe/stripe-js": "^1.47.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
