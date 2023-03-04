@@ -7,9 +7,11 @@ import {
   createHttpLink
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import Modal from 'react-modal'
 
-import { Calendar } from './components/Calendar';
+import Calendar from './components/Calendar';
+import FinancialSummary from './components/FinancialSummary'
 
 const httpLink = createHttpLink({
   uri: '/graohql'
@@ -30,6 +32,8 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+Modal.setAppElement('#root')
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -40,8 +44,10 @@ function App() {
           path="/"
           element={<Calendar />}
           />
-
-          
+          <Route
+          path="/finances"
+          element={<FinancialSummary />}
+          />        
         </Routes>
       </Router>
 

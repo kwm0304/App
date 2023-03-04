@@ -6,7 +6,7 @@ import scrollGridPlugin from '@fullcalendar/scrollgrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import moment from 'moment';
 
-export default function Calendar () {
+const Calendar = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [events, setEvents] = useState([]);
     const calendarRef = useRef(null);
@@ -19,9 +19,14 @@ export default function Calendar () {
             title: event.title,
             address: event.address,
             from: event.from,
-            price: event.price
+            price: event.price,
+            customer_first: event.customer_first,
+            customer_last: event.customer_last,
+            payment_method: event.payment_method
         })
     }
+
+    async function handleDateSet()
 
     return (
         <section>
@@ -35,8 +40,10 @@ export default function Calendar () {
                 eventAdd={event => onEventAdded(event)}
                 datesSet={(date) => handleDateSet(date)}
                 />
-                <AddEventModal isOpen={modalOpen} onClose={() => setModalOpen(false)} onEventAdded={event => onEventAdded(event)} />
             </div>
+            <AddEventModal isOpen={modalOpen} onClose={() => setModalOpen(false)} onEventAdded={event => onEventAdded(event)} />
         </section>
     )
 }
+
+export default Calendar;

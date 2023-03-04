@@ -81,12 +81,12 @@ export default function ({isOpen, onClose, onEventAdded}) {
                     <Form.Label>$</Form.Label>
                     <Form.Control type='number' value={price} onChange={e => handleChange(e.target.value)} />
                 </Form.Group>
-
+//need to assign value here
                 <Form.Select aria-label="paymentMethod">
-                    <option>Cash</option>
-                    <option>Check</option>
-                    <option>Card</option>
-                    <option>Other</option>
+                    <option value={payment_method.cash}>Cash</option>
+                    <option value={payment_method.check}>Check</option>
+                    <option value={payment_method.card}>Card</option>
+                    <option value={payment_method.other}>Other</option>
                 </Form.Select>
             </Form>
         </Modal>
